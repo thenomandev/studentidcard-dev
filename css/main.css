@@ -35,8 +35,13 @@ width:100%;
 box-sizing:border-box;
 }
 
+.input-box{
+position:relative;
+margin-bottom:10px;
+}
+
 #adjustTarget{
-margin-top:18px;
+margin-top:10px;
 }
 
 #adjustTarget{
