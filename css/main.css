@@ -537,7 +537,7 @@ cursor:pointer;
 .reset-btn{
 width:100%;
 margin:8px 0 12px 0;
-background:linear-gradient(135deg,#ff9800,#ff6a00);
+background:#9800a8;
 color:white;
 border:none;
 padding:12px;
@@ -545,6 +545,7 @@ border-radius:14px;
 font-size:14px;
 font-weight:700;
 cursor:pointer;
+transition:0.3s;
 }
 
 .theme-buttons{
