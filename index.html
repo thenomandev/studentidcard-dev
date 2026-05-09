@@ -690,7 +690,7 @@ const bottom=document.querySelector(".front-bottom-design");
 const footer=document.querySelector(".footer");
 const dept=document.getElementById("studentSubject");
 
-const buttons=document.querySelectorAll(".btn, .logo-controls button, .theme-buttons button");
+const buttons=document.querySelectorAll(".btn, .logo-controls button, .theme-buttons button, .reset-btn");
 const labels=document.querySelectorAll(".form-box label");
 const icons=document.querySelectorAll(".input-box i");
 const heading=document.querySelector(".form-box h2");
@@ -806,7 +806,7 @@ bottom.style.background=header;
 footer.style.background=header;
 dept.style.color=subject;
 
-document.querySelectorAll(".btn, .logo-controls button").forEach(button=>{
+document.querySelectorAll(".btn, .logo-controls button, .reset-btn").forEach(button=>{
 button.style.background=btn;
 });
 
@@ -932,7 +932,7 @@ document.querySelector(".header-text").style.transform="translate(0px,0px) scale
 loadDatabase(appData).then(()=>{
 
 
-setTheme("purple");
+setTheme(appData.settings.defaultTheme || "purple");
 document.getElementById("logoMode").value="transparent";
 updateLogoMode();
 
