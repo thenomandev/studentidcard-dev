@@ -929,13 +929,11 @@ document.getElementById("logoBox").style.transform="translate(0px,0px) scale(1)"
 document.querySelector(".header-text").style.transform="translate(0px,0px) scale(1)";
 }
 
-loadDatabase(appData).then(()=>{
-
-
-setTheme(appData.settings.defaultTheme || "purple");
 document.getElementById("logoMode").value="transparent";
-updateLogoMode();
 
+loadDatabase(appData).then(()=>{
+setTheme(appData.settings.defaultTheme || "purple");
+updateLogoMode();
 });
 
 </script>
