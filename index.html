@@ -690,7 +690,7 @@ const bottom=document.querySelector(".front-bottom-design");
 const footer=document.querySelector(".footer");
 const dept=document.getElementById("studentSubject");
 
-const buttons=document.querySelectorAll(".btn, .logo-controls button");
+const buttons=document.querySelectorAll(".btn, .logo-controls button, .theme-buttons button");
 const labels=document.querySelectorAll(".form-box label");
 const icons=document.querySelectorAll(".input-box i");
 const heading=document.querySelector(".form-box h2");
@@ -806,7 +806,13 @@ bottom.style.background=header;
 footer.style.background=header;
 dept.style.color=subject;
 
-buttons.forEach(button=>button.style.background=btn);
+document.querySelectorAll(".btn, .logo-controls button").forEach(button=>{
+button.style.background=btn;
+});
+
+document.querySelectorAll(".theme-buttons button").forEach(button=>{
+button.style.background="";
+});
 labels.forEach(label=>{
 label.style.color="#ffffff";
 label.style.background=header;
