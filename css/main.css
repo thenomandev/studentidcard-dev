@@ -60,6 +60,10 @@ box-sizing:border-box;
 background:white;
 }
 
+#logoMode{
+margin-top:6px;
+}
+
 .form-box label{
 display:block;
 margin-top:14px;
@@ -550,6 +554,9 @@ cursor:pointer;
 font-size:18px;
 color:white;
 font-weight:bold;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
 .theme-purple{background:linear-gradient(135deg,#7b008a,#d100d1);}
@@ -563,6 +570,7 @@ font-weight:bold;
 .theme-classicblue{background:linear-gradient(135deg,#082c6c,#0b3d91);}
 .theme-brown{background:linear-gradient(135deg,#3e2723,#6d4c41);}
 .theme-violet{background:linear-gradient(135deg,#4a148c,#7b1fa2);}
+.theme-teal{background:linear-gradient(135deg,#004d40,#00897b);}
 .college-dropdown-box{
 position:relative;
 }
