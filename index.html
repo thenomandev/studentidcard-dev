@@ -9,9 +9,574 @@
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
 
-<link rel="stylesheet" href="css/main.css">
+body{
+margin:0;
+padding:20px;
+background:#ececec;
+font-family:Arial,sans-serif;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
 
+.form-box{
+width:340px;
+background:white;
+padding:18px;
+border-radius:18px;
+margin-bottom:25px;
+box-shadow:0 4px 15px rgba(0,0,0,0.15);
+}
+
+.form-box h2{
+margin-top:0;
+text-align:center;
+background:linear-gradient(135deg,#7b008a,#d100d1);
+color:white;
+padding:12px 18px;
+border-radius:14px;
+font-size:20px;
+font-weight:900;
+letter-spacing:1px;
+text-transform:uppercase;
+box-shadow:0 6px 15px rgba(123,0,138,0.35);
+display:inline-block;
+width:100%;
+box-sizing:border-box;
+}
+
+.input-box{
+position:relative;
+margin-bottom:10px;
+}
+
+.input-box i{
+position:absolute;
+left:14px;
+top:50%;
+transform:translateY(-50%);
+color:#9800a8;
+font-size:15px;
+}
+
+.input-box input,
+.input-box select{
+width:100%;
+padding:12px 12px 12px 42px;
+border:1px solid #ccc;
+border-radius:10px;
+font-size:15px;
+box-sizing:border-box;
+background:white;
+}
+
+.form-box label{
+display:block;
+margin-top:14px;
+margin-bottom:8px;
+text-align:center;
+font-size:14px;
+font-weight:900;
+letter-spacing:1px;
+text-transform:uppercase;
+color:white;
+padding:10px 16px;
+border-radius:14px;
+background:linear-gradient(135deg,#0b3d91,#1976d2);
+box-shadow:0 6px 14px rgba(11,61,145,0.30);
+border:1px solid rgba(255,255,255,0.35);
+}
+
+.id-card{
+width:340px;
+height:540px;
+background:#f4f4f4;
+border-radius:22px;
+overflow:hidden;
+position:relative;
+margin-bottom:30px;
+box-shadow:0 4px 15px rgba(0,0,0,0.2);
+page-break-inside:avoid;
+break-inside:avoid;
+}
+
+.front-header{
+background:#9800a8;
+height:165px;
+color:white;
+text-align:center;
+position:relative;
+padding-top:20px;
+}
+
+.front-header::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-1px;
+width:100%;
+height:58px;
+background:#f4f4f4;
+border-radius:50% 50% 0 0;
+}
+
+.logo{
+position:absolute;
+left:30px;
+top:40px;
+background:white;
+padding:8px;
+border-radius:8px;
+display:flex;
+align-items:center;
+justify-content:center;
+width:35px;
+height:35px;
+z-index:5;
+}
+
+.logo img{
+width:140%;
+height:140%;
+object-fit:contain;
+display:block;
+}
+
+.logo.transparent{
+left:25px;
+top:20px;
+background:transparent;
+padding:0;
+width:60px;
+height:60px;
+border-radius:0;
+}
+
+.logo.transparent img{
+width:100%;
+height:100%;
+object-fit:contain;
+display:block;
+}
+
+.header-text{
+position:absolute;
+top:35px;
+left:58px;
+width:275px;
+overflow:visible;
+}
+
+.header-text h1{
+margin:0;
+font-size:13px;
+line-height:1.15;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:clip;
+}
+
+.header-text p{
+margin:1px 0;
+font-size:11px;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:clip;
+}
+
+.estd{
+margin-left:-40px !important;
+font-size:12px !important;
+}
+
+.dept{
+margin-top:70px;
+font-size:22px;
+font-weight:bold;
+color:#ffd500;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+padding:0 10px;
+}
+
+.photo-box{
+text-align:center;
+margin-top:-45px;
+position:relative;
+z-index:5;
+}
+
+.photo-box img{
+width:115px;
+height:140px;
+object-fit:cover;
+border:3px solid red;
+border-radius:8px;
+background:white;
+}
+
+.student-name{
+text-align:center;
+color:#000080;
+font-size:26px;
+font-weight:bold;
+margin-top:1px;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+padding:0 10px;
+}
+
+.info{
+padding:20px;
+margin-top:1px;
+}
+
+.info-row{
+display:flex;
+align-items:center;
+gap:4px;
+margin-bottom:8px;
+font-size:17px;
+line-height:1.1;
+}
+
+.label{
+width:110px;
+font-weight:bold;
+flex-shrink:0;
+}
+
+.signature{
+position:absolute;
+right:18px;
+bottom:20px;
+text-align:center;
+}
+
+.signature img{
+width:78px;
+height:auto;
+object-fit:contain;
+}
+
+.signature p{
+margin:0;
+margin-top:-10px;
+font-size:13px;
+}
+
+.front-bottom-design{
+position:absolute;
+bottom:0;
+width:100%;
+background:linear-gradient(90deg,#6d0078,#c100c1);
+padding:10px 0;
+}
+
+.top-wave{
+position:relative;
+height:70px;
+background:linear-gradient(135deg,#7b008a,#d100d1);
+overflow:hidden;
+}
+
+.top-wave::before{
+content:"";
+position:absolute;
+bottom:-38px;
+left:-20px;
+width:120%;
+height:75px;
+background:#f4f4f4;
+border-radius:50%;
+}
+
+.back-content{
+padding:10px 18px;
+}
+
+.back-row{
+display:flex;
+align-items:center;
+gap:4px;
+margin-bottom:7px;
+font-size:15px;
+line-height:1.35;
+}
+
+.back-label{
+width:125px;
+font-weight:bold;
+flex-shrink:0;
+}
+
+.back-row div:last-child{
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+}
+
+.blood{
+color:red;
+font-size:17px;
+font-weight:bold;
+margin-top:10px;
+margin-bottom:14px;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+}
+
+.notice{
+text-align:center;
+font-size:13px;
+font-weight:bold;
+line-height:1.45;
+}
+
+.notice p{
+margin:0;
+}
+
+.notice .first{
+margin-bottom:7px;
+}
+
+.qr{
+text-align:center;
+margin-top:14px;
+}
+
+.qr img{
+width:100px;
+height:100px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+object-fit:contain;
+}
+
+.college{
+text-align:center;
+margin-top:12px;
+}
+
+.college h2{
+margin:0;
+font-size:15px;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+padding:0 5px;
+}
+
+.college p{
+margin:2px 0;
+font-size:10px;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+padding:0 5px;
+}
+
+.footer{
+position:absolute;
+bottom:0;
+width:100%;
+background:linear-gradient(90deg,#6d0078,#c100c1);
+color:white;
+text-align:center;
+padding:6px 0;
+font-size:12px;
+font-weight:bold;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+}
+
+.btn{
+background:#9800a8;
+color:white;
+border:none;
+padding:14px 28px;
+border-radius:10px;
+font-size:16px;
+font-weight:bold;
+margin-top:10px;
+margin-bottom:20px;
+cursor:pointer;
+width:340px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#7d0089;
+transform:translateY(-2px);
+}
+
+.developer-section{
+width:340px;
+background:rgba(255,255,255,0.88);
+backdrop-filter:blur(14px);
+padding:28px 18px;
+border-radius:24px;
+box-shadow:0 12px 35px rgba(0,0,0,0.14);
+text-align:center;
+margin-bottom:20px;
+border:1px solid rgba(255,255,255,0.7);
+}
+
+.developer-text{
+font-size:18px;
+font-weight:bold;
+color:#9800a8;
+margin-bottom:18px;
+letter-spacing:0.5px;
+}
+
+.dev-subtitle{
+font-size:18px;
+font-weight:800;
+color:#222;
+margin-top:6px;
+}
+
+.dev-version{
+font-size:13px;
+font-weight:600;
+color:#777;
+margin-top:6px;
+letter-spacing:0.5px;
+}
+
+.dev-copy{
+font-size:11px;
+opacity:0.85;
+font-weight:600;
+color:#888;
+margin-top:8px;
+letter-spacing:0.4px;
+}
+.dev-contact{
+font-size:14px;
+font-weight:700;
+color:#0b3d91;
+margin-top:14px;
+margin-bottom:18px;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+
+.social-icons{
+display:flex;
+justify-content:center;
+gap:14px;
+margin-top:12px;
+flex-wrap:wrap;
+}
+
+.social{
+width:56px;
+height:56px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:18px;
+font-size:24px;
+text-decoration:none;
+color:white;
+transition:all 0.3s ease;
+box-shadow:0 8px 20px rgba(0,0,0,0.12);
+flex-shrink:0;
+}
+
+.social:hover{
+transform:translateY(-4px) scale(1.08);
+}
+
+.facebook{
+background:linear-gradient(135deg,#1877f2,#0d5ddf);
+}
+
+.instagram{
+background:linear-gradient(135deg,#ff0069,#ff7a00,#ffd600);
+}
+
+.whatsapp{
+background:linear-gradient(135deg,#25d366,#128c7e);
+}
+
+.telegram{
+background:linear-gradient(135deg,#0088cc,#229ed9);
+}
+
+.email{
+background:linear-gradient(135deg,#ea4335,#c5221f);
+}
+
+.logo-controls{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:8px;
+margin-top:10px;
+}
+
+.logo-controls button{
+background:#9800a8;
+color:white;
+border:none;
+padding:10px;
+border-radius:10px;
+font-size:20px;
+cursor:pointer;
+}
+
+.reset-btn{
+width:100%;
+margin:8px 0 12px 0;
+background:linear-gradient(135deg,#ff9800,#ff6a00);
+color:white;
+border:none;
+padding:12px;
+border-radius:14px;
+font-size:14px;
+font-weight:700;
+cursor:pointer;
+}
+
+.theme-buttons{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:8px;
+margin-top:10px;
+}
+
+.theme-buttons button{
+height:42px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-size:18px;
+color:white;
+font-weight:bold;
+}
+
+.theme-purple{background:linear-gradient(135deg,#7b008a,#d100d1);}
+.theme-blue{background:linear-gradient(135deg,#003c8f,#00a2ff);}
+.theme-green{background:linear-gradient(135deg,#0b7a3b,#19c15f);}
+.theme-red{background:linear-gradient(135deg,#8f0000,#ff3d3d);}
+.theme-gold{background:linear-gradient(135deg,#111,#d4af37);}
+.theme-ocean{background:linear-gradient(135deg,#004e92,#00c6ff);}
+.theme-sunset{background:linear-gradient(135deg,#ff512f,#dd2476);}
+.theme-black{background:linear-gradient(135deg,#111,#444);}
+.theme-classicblue{background:linear-gradient(135deg,#082c6c,#0b3d91);}
+.theme-brown{background:linear-gradient(135deg,#3e2723,#6d4c41);}
+.theme-violet{background:linear-gradient(135deg,#4a148c,#7b1fa2);}
+.theme-teal{background:linear-gradient(135deg,#004d40,#00897b);}
+</style>
 </head>
 
 <body>
@@ -116,19 +681,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </div>
 
 
-<div class="input-box college-dropdown-box">
+<div class="input-box">
 <i class="fa-solid fa-building"></i>
-
-<input
-type="text"
-id="collegeSearch"
-placeholder="Select College"
-autocomplete="off"
-onclick="toggleCollegeDropdown()"
-oninput="filterCollegeList()"
->
-
-<div id="collegeDropdown" class="college-dropdown"></div>
+<select id="collegePreset" onchange="applyCollegePreset()">
+<option value="">Select College</option>
+<option value="barishal">Barishal Govt College</option>
+<option value="bm">Government Brojomohun College</option>
+<option value="hatem">Govt Syed Hatem Ali College</option>
+<option value="women">Barisal Govt Women's College</option>
+</select>
 </div>
 
 
@@ -411,115 +972,66 @@ title="Email">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
-<script type="module">
-import { loadDatabase } from "./js/college-service.js";
+<script>
 
-let appData = {
-colleges:{},
-settings:{
-defaultLogoMode:"transparent",
-defaultTheme:"purple"
-}
-};
+function applyCollegePreset(){
 
+let preset = document.getElementById("collegePreset").value;
 
-window.toggleCollegeDropdown = function(){
-const dropdown=document.getElementById("collegeDropdown");
-
-if(dropdown.style.display==="block"){
-dropdown.style.display="none";
-}else{
-filterCollegeList();
-dropdown.style.display="block";
-}
-}
-
-window.filterCollegeList = function(){
-const input=document.getElementById("collegeSearch").value.toLowerCase();
-const dropdown=document.getElementById("collegeDropdown");
-
-dropdown.innerHTML="";
-
-Object.keys(appData.colleges).forEach((key)=>{
-const college=appData.colleges[key];
-
-const match=
-key.toLowerCase().includes(input) ||
-college.english.toLowerCase().includes(input) ||
-college.bangla.toLowerCase().includes(input);
-
-if(match){
-const item=document.createElement("div");
-item.className="college-item";
-item.innerText=college.english;
-
-item.onclick=function(){
-document.getElementById("collegeSearch").value=college.english;
-dropdown.style.display="none";
-applyCollegePreset();
-};
-
-dropdown.appendChild(item);
-}
-});
-}
-
-window.applyCollegePreset = function(){
-
-let inputValue = document.getElementById("collegeSearch").value;
-let preset = null;
-
-Object.keys(appData.colleges).forEach((key)=>{
-const college=appData.colleges[key];
-
-if(
-key.toLowerCase()===inputValue.toLowerCase() ||
-college.english.toLowerCase()===inputValue.toLowerCase() ||
-college.bangla.toLowerCase()===inputValue.toLowerCase()
-){
-preset=key;
-}
-});
-
-if(!preset || !appData.colleges[preset]) return;
-
-let college = appData.colleges[preset];
-let logoMode = document.getElementById("logoMode").value;
-
-document.getElementById("collegeBanglaInput").value=college.bangla;
-document.getElementById("collegeEnglishInput").value=college.english;
-document.getElementById("collegeEstInput").value=college.established;
-document.getElementById("collegePhoneInput").value=college.phone;
-document.getElementById("collegeEmailInput").value=college.email;
-document.getElementById("collegeWebsiteInput").value=college.website;
-
+if(preset==="barishal"){
+document.getElementById("collegeBanglaInput").value="বরিশাল সরকারি কলেজ, বরিশাল";
+document.getElementById("collegeEnglishInput").value="Barishal Govt. College, Barishal";
+document.getElementById("collegeEstInput").value="১৯৬৩";
+document.getElementById("collegePhoneInput").value="০২৪৭৮৮-৬৪৬১৪";
+document.getElementById("collegeEmailInput").value="principal_gbc@yahoo.com";
+document.getElementById("collegeWebsiteInput").value="www.gbc.gov.bd";
 document.getElementById("collegeLogo").src =
-logoMode==="transparent"
-? college.transparentLogo
-: college.logo;
+document.getElementById("logoMode").value==="transparent"
+? "https://raw.githubusercontent.com/thenomandev/media/main/Student%20ID%20Card%20WebApps/College%20Logo/Barishal%20Govt.%20College/Barishal%20Govt.%20College%20Transparent%20Logo.png"
+: "https://raw.githubusercontent.com/thenomandev/media/main/Student%20ID%20Card%20WebApps/College%20Logo/Barishal%20Govt.%20College%20Logo.png";
+document.getElementById("principalSignature").src="https://raw.githubusercontent.com/thenomandev/media/main/Student%20ID%20Card%20WebApps/Principal%20signature/Barisal%20College%20Principal%20signature%20.png";
+}
 
-document.getElementById("principalSignature").src=college.signature;
+if(preset==="bm"){
+document.getElementById("collegeBanglaInput").value="সরকারি ব্রজমোহন কলেজ, বরিশাল";
+document.getElementById("collegeEnglishInput").value="Government Brojomohun College, Barishal";
+document.getElementById("collegeEstInput").value="১৮৮৯";
+document.getElementById("collegePhoneInput").value="০২৪৭৮৮-৬৪৯০৯, ০২-৬৪৭৯৩";
+document.getElementById("collegeEmailInput").value="principal@bmcollege.gov.bd";
+document.getElementById("collegeWebsiteInput").value="www.bmcollege.gov.bd";
+document.getElementById("collegeLogo").src="https://raw.githubusercontent.com/thenomandev/media/main/Student%20ID%20Card%20WebApps/College%20Logo/BM%20College%20Logo.png";
+document.getElementById("principalSignature").src="https://raw.githubusercontent.com/thenomandev/media/main/Student%20ID%20Card%20WebApps/Principal%20signature/BM%20College%20Principal%20signature.png";
+}
+
+if(preset==="hatem"){
+document.getElementById("collegeBanglaInput").value="সরকারি সৈয়দ হাতেম আলী কলেজ, বরিশাল";
+document.getElementById("collegeEnglishInput").value="Govt. Syed Hatem Ali College, Barishal";
+document.getElementById("collegeEstInput").value="১৯৬৬";
+document.getElementById("collegePhoneInput").value="০২৪৭৮৮-৬৪৯৮৪";
+document.getElementById("collegeEmailInput").value="hatemalicollegebarisal@yahoo.com";
+document.getElementById("collegeWebsiteInput").value="www.gshac.gov.bd";
+document.getElementById("collegeLogo").src="https://raw.githubusercontent.com/thenomandev/media/main/Student%20ID%20Card%20WebApps/College%20Logo/Govt.%20Syed%20Hatem%20Ali%20College%20Logo.png";
+document.getElementById("principalSignature").src="https://raw.githubusercontent.com/thenomandev/media/main/Student%20ID%20Card%20WebApps/Principal%20signature/Govt.%20Syed%20Hatem%20Ali%20College%20Principal%20signature.png";
+}
+
+if(preset==="women"){
+document.getElementById("collegeBanglaInput").value="বরিশাল সরকারি মহিলা কলেজ, বরিশাল";
+document.getElementById("collegeEnglishInput").value="Barisal Govt Women's College, Barishal";
+document.getElementById("collegeEstInput").value="১৯৫৭";
+document.getElementById("collegePhoneInput").value="০৪৩১-৬৪৯৯২";
+document.getElementById("collegeEmailInput").value="bgwcinfo@yahoo.com";
+document.getElementById("collegeWebsiteInput").value="www.bwc.gov.bd";
+document.getElementById("collegeLogo").src="https://raw.githubusercontent.com/thenomandev/media/main/Student%20ID%20Card%20WebApps/College%20Logo/barisal%20govt%20women%27s%20college%20Logo.png";
+document.getElementById("principalSignature").src="https://raw.githubusercontent.com/thenomandev/media/main/Student%20ID%20Card%20WebApps/Principal%20signature/barisal%20govt%20women%27s%20college%20Principal%20signature.png";
+}
 
 updateCard();
 }
 
-window.updateLogoMode = function(){
+function updateLogoMode(){
 let logoMode=document.getElementById("logoMode").value;
 let logoBox=document.getElementById("logoBox");
-let inputValue=document.getElementById("collegeSearch").value;
-let preset=null;
-
-Object.keys(appData.colleges).forEach((key)=>{
-const college=appData.colleges[key];
-
-if(
-key.toLowerCase()===inputValue.toLowerCase() ||
-college.english.toLowerCase()===inputValue.toLowerCase() ||
-college.bangla.toLowerCase()===inputValue.toLowerCase()
-){
-preset=key;
-}
-});
+let preset=document.getElementById("collegePreset").value;
 
 if(logoMode==="box"){
 logoBox.classList.remove("transparent");
@@ -527,20 +1039,16 @@ logoBox.classList.remove("transparent");
 logoBox.classList.add("transparent");
 }
 
-let collegeKey = preset || "barishal";
-
-if(appData.colleges && appData.colleges[collegeKey]){
-let college = appData.colleges[collegeKey];
-
+if(preset==="barishal" || preset===""){
 document.getElementById("collegeLogo").src =
 logoMode==="transparent"
-? college.transparentLogo
-: college.logo;
+? "https://raw.githubusercontent.com/thenomandev/media/main/Student%20ID%20Card%20WebApps/College%20Logo/Barishal%20Govt.%20College/Barishal%20Govt.%20College%20Transparent%20Logo.png"
+: "https://raw.githubusercontent.com/thenomandev/media/main/Student%20ID%20Card%20WebApps/College%20Logo/Barishal%20Govt.%20College%20Logo.png";
 }
 
 }
 
-window.updateCard = function(){
+function updateCard(){
 
 let name=document.getElementById("nameInput").value;
 let roll=document.getElementById("rollInput").value;
@@ -634,7 +1142,7 @@ let headerX=0;
 let headerY=0;
 let headerSize=100;
 
-window.moveLogo = function(direction){
+function moveLogo(direction){
 
 const target=document.getElementById("adjustTarget").value;
 const element=target==="logo"
@@ -660,7 +1168,7 @@ element.style.transform =
 }
 }
 
-window.resizeLogo = function(action){
+function resizeLogo(action){
 
 const target=document.getElementById("adjustTarget").value;
 const element=target==="logo"
@@ -682,7 +1190,7 @@ element.style.transform =
 }
 }
 
- window.setTheme = function(theme){
+ function setTheme(theme){
 
 const frontHeader=document.querySelector(".front-header");
 const topWave=document.querySelector(".top-wave");
@@ -690,7 +1198,7 @@ const bottom=document.querySelector(".front-bottom-design");
 const footer=document.querySelector(".footer");
 const dept=document.getElementById("studentSubject");
 
-const buttons=document.querySelectorAll(".btn, .logo-controls button, .theme-buttons button, .reset-btn");
+const buttons=document.querySelectorAll(".btn, .logo-controls button, .reset-btn");
 const labels=document.querySelectorAll(".form-box label");
 const icons=document.querySelectorAll(".input-box i");
 const heading=document.querySelector(".form-box h2");
@@ -806,13 +1314,7 @@ bottom.style.background=header;
 footer.style.background=header;
 dept.style.color=subject;
 
-document.querySelectorAll(".btn, .logo-controls button, .reset-btn").forEach(button=>{
-button.style.background=btn;
-});
-
-document.querySelectorAll(".theme-buttons button").forEach(button=>{
-button.style.background="";
-});
+buttons.forEach(button=>button.style.background=btn);
 labels.forEach(label=>{
 label.style.color="#ffffff";
 label.style.background=header;
@@ -877,7 +1379,7 @@ document.body.style.background="linear-gradient(135deg,#e0f2f1,#b2dfdb,#80cbc4)"
 }
 }
 
-window.downloadPDF = function(){
+function downloadPDF(){
 
 const frontCard=document.querySelectorAll(".id-card")[0];
 const backCard=document.querySelectorAll(".id-card")[1];
@@ -917,7 +1419,7 @@ orientation:"portrait"
 }).from(wrapper).save();
 }
 
-window.resetAdjust = function(){
+function resetAdjust(){
 logoX=0;
 logoY=0;
 logoSize=100;
@@ -929,12 +1431,8 @@ document.getElementById("logoBox").style.transform="translate(0px,0px) scale(1)"
 document.querySelector(".header-text").style.transform="translate(0px,0px) scale(1)";
 }
 
-document.getElementById("logoMode").value="transparent";
-
-loadDatabase(appData).then(()=>{
-setTheme(appData.settings.defaultTheme || "purple");
+setTheme('purple');
 updateLogoMode();
-});
 
 </script>
 
