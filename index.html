@@ -692,6 +692,7 @@ const dept=document.getElementById("studentSubject");
 
 const buttons=document.querySelectorAll(".btn, .logo-controls button, .theme-buttons button, .reset-btn");
 const icons=document.querySelectorAll(".input-box i");
+const labels=document.querySelectorAll(".form-box label");
 const heading=document.querySelector(".form-box h2");
 const devText=document.querySelector(".developer-text");
 const formBox=document.querySelector(".form-box");
@@ -814,6 +815,11 @@ button.style.background="";
 });
 
 icons.forEach(icon=>icon.style.color=accent);
+
+labels.forEach(label=>{
+label.style.background=header;
+label.style.boxShadow=`0 6px 15px ${accent}55`;
+});
 
 heading.style.color="#ffffff";
 heading.style.background=header;
