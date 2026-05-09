@@ -50,7 +50,7 @@ position:absolute;
 left:14px;
 top:50%;
 transform:translateY(-50%);
-color:#9800a8;
+color:inherit;
 font-size:15px;
 }
 
@@ -81,8 +81,8 @@ text-transform:uppercase;
 color:white;
 padding:10px 16px;
 border-radius:14px;
-background:linear-gradient(135deg,#0b3d91,#1976d2);
-box-shadow:0 6px 14px rgba(11,61,145,0.30);
+background:inherit;
+box-shadow:none;
 border:1px solid rgba(255,255,255,0.35);
 }
 
@@ -100,7 +100,7 @@ break-inside:avoid;
 }
 
 .front-header{
-background:#9800a8;
+background:linear-gradient(135deg,#7b008a,#d100d1);
 height:165px;
 color:white;
 text-align:center;
@@ -270,7 +270,7 @@ font-size:13px;
 position:absolute;
 bottom:0;
 width:100%;
-background:linear-gradient(90deg,#6d0078,#c100c1);
+background:linear-gradient(135deg,#7b008a,#d100d1);
 padding:10px 0;
 }
 
@@ -383,7 +383,7 @@ padding:0 5px;
 position:absolute;
 bottom:0;
 width:100%;
-background:linear-gradient(90deg,#6d0078,#c100c1);
+background:linear-gradient(135deg,#7b008a,#d100d1);
 color:white;
 text-align:center;
 padding:6px 0;
