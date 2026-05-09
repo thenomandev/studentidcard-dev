@@ -81,9 +81,10 @@ text-transform:uppercase;
 color:white;
 padding:10px 16px;
 border-radius:14px;
-background:inherit;
-box-shadow:none;
+background:#6a1b9a;
+box-shadow:0 6px 15px rgba(106,27,154,0.35);
 border:1px solid rgba(255,255,255,0.35);
+transition:0.3s;
 }
 
 .id-card{
