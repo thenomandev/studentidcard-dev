@@ -689,8 +689,6 @@ const topWave=document.querySelector(".top-wave");
 const bottom=document.querySelector(".front-bottom-design");
 const footer=document.querySelector(".footer");
 const dept=document.getElementById("studentSubject");
-
-const buttons=document.querySelectorAll(".btn, .logo-controls button, .theme-buttons button, .reset-btn");
 const icons=document.querySelectorAll(".input-box i");
 const labels=document.querySelectorAll(".form-box label");
 const heading=document.querySelector(".form-box h2");
@@ -932,8 +930,9 @@ document.querySelector(".header-text").style.transform="translate(0px,0px) scale
 
 document.getElementById("logoMode").value="transparent";
 
-loadDatabase(appData).then(()=>{
 setTheme(appData.settings.defaultTheme || "purple");
+
+loadDatabase(appData).then(()=>{
 updateLogoMode();
 });
 
